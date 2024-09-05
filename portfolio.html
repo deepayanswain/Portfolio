@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #4a90e2;
+            --secondary-color: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-color: #2c2c2c;
+        }
+
+        header {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .project {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3a7bc8;
+        }
+
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .code-preview {
+            background-color: #f4f4f4;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="darkModeToggle">🌓</button>
+
+    <header>
+        <h1>Deepayan Swain</h1>
+        <p>Java Developer & SQL Database Specialist</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate Java developer and SQL database specialist. I excel at creating efficient, scalable applications and designing robust database systems that drive business intelligence and data-driven decision making.</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Library Management System (Java)</h3>
+                <p>A Java-based application for managing a library's book inventory, user accounts, and lending processes. This project demonstrates object-oriented programming principles, file I/O operations, and basic data structures.</p>
+                <p>Key features:</p>
+                <ul>
+                    <li>Book and user management</li>
+                    <li>Borrowing and returning functionality</li>
+                    <li>Search and filter capabilities</li>
+                </ul>
+                <div class="code-preview">
+// Sample code snippet
+public class Book {
+    private String title;
+    private String author;
+    private String isbn;
+    private boolean isAvailable;
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.isAvailable = true;
+    }
+
+    // Getters and setters...
+}
+                </div>
+                <a href="https://github.com/deepayanswain/JavaBasedProject/blob/main/JAVAProject.java" class="btn">View Full Project</a>
+            </div>
+            <div class="project">
+                <h3>Employee Database Management (SQL)</h3>
+                <p>An SQL-based project for managing employee data, demonstrating database design, complex queries, and data manipulation. This project showcases my ability to create efficient database schemas and write optimized SQL queries.</p>
+                <p>Key features:</p>
+                <ul>
+                    <li>Normalized database schema design</li>
+                    <li>Complex JOIN operations and subqueries</li>
+                    <li>Stored procedures and views for data analysis</li>
+                    <li>Data integrity constraints and indexing</li>
+                </ul>
+                <div class="code-preview">
+-- Sample SQL query
+SELECT d.department_name, COUNT(e.employee_id) as employee_count
+FROM departments d
+LEFT JOIN employees e ON d.department_id = e.department_id
+GROUP BY d.department_name
+HAVING COUNT(e.employee_id) > 5
+ORDER BY employee_count DESC;
+                </div>
+                <a href="https://github.com/deepayanswain/SQLBasedProject/blob/main/SQLProject.sql" class="btn">View Full Project</a>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Java, Spring Framework</li>
+                <li>SQL (MySQL, PostgreSQL, Oracle)</li>
+                <li>Database Design and Optimization</li>
+                <li>JDBC, JPA, Hibernate</li>
+                <li>Git, Maven, Gradle</li>
+                <li>HTML5, CSS3, JavaScript</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/deepayan-swain-80b257234/">linkedin.com/in/DeepayanSwain</a></p>
+            <p>GitHub: <a href="https://github.com/deepayanswain?tab=repositories">github.com/DeepyanSwain</a></p>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌓';
+        });
+
+        // Add a simple animation to project cards
+        const projects = document.querySelectorAll('.project');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        projects.forEach(project => {
+            project.style.opacity = 0;
+            project.style.transform = 'translateY(20px)';
+            project.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(project);
+        });
+    </script>
+</body>
+</html>
